@@ -1,2 +1,4 @@
+#!/bin/bash
 
-What is shebang notation ?
+echo Welcome to Shell Scripting
+echo "This is the first test of shell scripting"
