@@ -22,12 +22,13 @@ b56(){
     echo "Function completed"
 }
 
-# b56
+b56
 
 stat(){
     echo " Number of sessions opened $(who|wc -l)"
     echo "Todays date is $(date +%F)" 
     echo "Avg cpu utilization $(uptime|awk -F : '{print $NF}' | awk -F ',' '{print $2}')"
+b56
 }
 
 stat
