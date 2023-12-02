@@ -9,6 +9,6 @@ echo "This is the first test of shell scripting"
 # -e enable escape sequence characters
 
 echo -e "Line1\nLine2"
-echo -e "Line3\t\Line4"
+echo -e "Line3\tLine4"
 echo Line5
 echo Line6
