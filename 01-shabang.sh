@@ -3,7 +3,7 @@
 echo Welcome to Shell Scripting
 echo "This is the first test of shell scripting"
 
-# Escape sequence characters
+# Escape sequence characters always enclose them in DOUBLE QUOTES
 #\n cursor move to new line
 #\t move tab space
 # -e enable escape sequence characters
