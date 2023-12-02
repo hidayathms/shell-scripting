@@ -9,4 +9,4 @@ b=abc
 # How can we print a variable ?$var
 
 echo pinting the value of $a
-echo pinting the value of $(b)
+echo pinting the value of ${b}
