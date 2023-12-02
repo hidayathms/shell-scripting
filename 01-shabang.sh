@@ -8,7 +8,7 @@ echo "This is the first test of shell scripting"
 #\t move tab space
 # -e enable escape sequence characters
 
-echo "Line1\nLine2"
-echo "Line3\t\Line4"
+echo -e "Line1\nLine2"
+echo -e "Line3\t\Line4"
 echo Line5
 echo Line6
