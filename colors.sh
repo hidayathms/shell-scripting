@@ -10,4 +10,4 @@ echo -e "\e[34m I am printing Blue Color \e[0m"
 echo -e "\e[36m I am printing cyan Color \e[0m"
 
 # Printing background+foreground
-echo -e "\e[41m I am printing background + foreground \e[0m"
+echo -e "\e[41m,32m I am printing background + foreground \e[0m"
