@@ -2,6 +2,7 @@
 
 #This is a single line comment
 
+#This the multi line comment
 <<COMMENT
 echo "cloud devops training"
 echo "whats your name"
