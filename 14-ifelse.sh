@@ -10,8 +10,11 @@ exit 0
 elif [ "$ACTION" == "stop" ] ; then 
 echo -e "\e[35m stopping shipping service \e[0m]"
 exit 1
-else 
-echo -e "\e[36m Starting shipping service \e[0m]"
+elif [ "$ACTION" == "restart" ] ; then 
+echo -e "\e[32m stopping shipping service \e[0m]"
 exit 2
+else 
+echo -e "\e[36m Valid options are start stop restart only \e[0m]"
+exit 100
 fi 
 
