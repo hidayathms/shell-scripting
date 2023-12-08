@@ -9,4 +9,4 @@ a=89
 b=99
 echo $a
 COMMENT
-echo "$b"
+echo " echo value of b is $b"
