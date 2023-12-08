@@ -10,7 +10,9 @@ fi
 echo -e "********* \e[35m Configuring frontend  \e[0m ************"
 
 echo -e " Installing NGINX"
-yum install nginx -y
+yum install nginx -y > /tmp/$1.log
+
+
 # systemctl enable nginx
 # systemctl start nginx
 
