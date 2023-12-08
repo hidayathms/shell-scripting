@@ -1,6 +1,8 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
+COMPONENT=$1
+
 if [$USER_ID -ne 0] ; then
 echo " This scrip is to be executed with sudo or as a root user "
 echo " Example Usage : sudo bash scripname componetname"
@@ -17,12 +19,17 @@ else
 echo -e "\e[34m Failure \e[0"
 fi
 
+echo -n " Downloading the component $1 : "
+
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0"
+else
+echo -e "\e[34m Failure \e[0"
+fi
 
 # systemctl enable nginx
 # systemctl start nginx
-
-# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-
 # cd /usr/share/nginx/html
 # rm -rf *
 # unzip /tmp/frontend.zip
