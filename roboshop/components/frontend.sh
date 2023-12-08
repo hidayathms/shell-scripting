@@ -1,7 +1,7 @@
 #!/bin/bash
 
-UID=$(id -u)
-if [$UID -ne 0] ; then
+USER_ID=$(id -u)
+if [$USER_ID -ne 0] ; then
 echo " This scrip is to be executed with sudo or as a root user "
 echo " Example Usage : sudo bash scripname componetname"
 exit 1
