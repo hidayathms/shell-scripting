@@ -15,5 +15,3 @@ echo -e "\e[36m Starting shipping service \e[0m]"
 exit 2
 fi 
 
-echo "It has not met any conditions"
-exit 100
