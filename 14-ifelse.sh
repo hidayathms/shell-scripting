@@ -10,4 +10,4 @@ exit 0
 fi 
 
 echo "It has not met any conditions"
-echo 100
+exit 100
