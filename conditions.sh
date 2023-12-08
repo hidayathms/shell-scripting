@@ -6,7 +6,7 @@
  #   ope1) commands-xy ;;
  #   opt2) command-y;;
 # esac
-
+ACTION=$?
 
 case $ACTION in
     start)
