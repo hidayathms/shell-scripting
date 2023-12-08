@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash comments/frontend.sh
+bash components/frontend.sh
