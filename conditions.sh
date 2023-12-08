@@ -10,15 +10,15 @@
 
 case $ACTION in
     start)
-    echo -e "\e[32m Starting shippping service \e[0"
+    echo -e "\e[32m Starting shippping service \e[0m"
     exit 0
     ;;
     stop) 
-    echo -e "\e[34m stoping shippping service \e[e0"
+    echo -e "\e[34m stoping shippping service \e[e0m"
     exit 1
     ;;
     restart)
-    echo -e "[\e[35m restarting shipping service \e[0"
+    echo -e "[\e[35m restarting shipping service \e[0m"
     exit 2
     ;;
     *) 
