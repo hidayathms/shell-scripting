@@ -4,7 +4,8 @@ USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
 CAT_REPO="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
-MONGO_SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
+CAT_DATA="https://github.com/stans-robot-project/catalogue/archive/main.zip"
+APPUSER="roboshop"
 
 stat() {
         if [ $1 -eq 0 ] ; then
@@ -29,3 +30,18 @@ stat $?
 echo -n " Installing $COMPONENT nodjs : "
 yum install nodejs -y   &>> $LOGFILE
 stat $?
+
+echo -n " Create new user in $COMPONENT  : "
+useradd $APPUSER
+stat $?
+
+
+# echo -n " Dowloading $COMPONENT data :"
+# curl -s -L -o /tmp/catalogue.zip $CAT_DATA
+# stat $?
+
+# echo -n "Extracting $COMPONENT schema : "
+# cd /home/roboshop
+# unzip -o /tmp/catalogue.zip
+
+# stat $?
