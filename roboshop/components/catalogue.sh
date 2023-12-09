@@ -70,6 +70,7 @@ npm install     &>> $LOGFILE
 stat $?
 
 echo -n " Configure the service : "
+cd $APPUSER_HOME
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
 stat $?
 
