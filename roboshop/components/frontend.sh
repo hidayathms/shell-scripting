@@ -14,9 +14,9 @@ echo -e "********* \e[35m Configuring frontend  \e[0m ************"
 echo -n " Installing NGINX"
 yum install nginx -y &>> /tmp/frontend.log
 if [ $? -eq 0 ] ; then
-echo -e "\e[32m Success \e[0"
+echo -e "\e[32m Success \e[0m"
 else
-echo -e "\e[34m Failure \e[0"
+echo -e "\e[34m Failure \e[0m"
 fi
 
 echo -n " Downloading the component $1 : "
