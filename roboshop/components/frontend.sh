@@ -30,7 +30,11 @@ fi
 echo -n "Cleanup of $1 component : "
 cd /usr/share/nginx/html
 rm -rf *    &>> /tmp/frontend.log
-
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[34m Failure \e[0m"
+fi
 
 # systemctl enable nginx
 # systemctl start nginx
