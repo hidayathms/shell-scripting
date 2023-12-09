@@ -1,3 +1,19 @@
-#!/bin/bash
+USER_ID=$(id -u)
+COMPONENT=mongo
+LOGFILE="/tmp/${COMPONENT}.log"
+MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+MONGO_SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
-echo " Configuring catalogue"
+stat() {
+        if [ $1 -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+    else
+    echo -e "\e[34m Failure \e[0m"
+    fi
+}
+
+if [ $USER_ID -ne 0 ] ; then
+echo " This scrip is to be executed with sudo or as a root user "
+echo " Example Usage : sudo bash scripname componetname"
+exit 1
+fi 
