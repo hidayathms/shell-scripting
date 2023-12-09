@@ -6,6 +6,7 @@ LOGFILE="/tmp/${COMPONENT}.log"
 CAT_REPO="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
 CAT_DATA="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 APPUSER="roboshop"
+APPUSER_HOME="/home/${APPUSER}/${COMPOENT}"
 
 stat() {
         if [ $1 -eq 0 ] ; then
@@ -52,7 +53,7 @@ unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
 echo -n " Configuring  $COMPOENT permissions : "
-mv /home/$APPUSER/catalogue-main /home/$APPUSER/catalogue
-chown -R $APPUSER:$APPUSER /home/${APPUSER}/${COMPOENT}
-chmod -R 770 /home/${APPUSER}/${COMPOENT}
+mv $APPUSER_HOME-main $APPUSER_HOME
+chown -R $APPUSER:$APPUSER $APPUSER_HOME
+chmod -R 770 $APPUSER_HOME
 stat $?
