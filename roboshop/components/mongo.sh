@@ -2,6 +2,7 @@ USER_ID=$(id -u)
 COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+MONGO_SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
 stat() {
         if [ $1 -eq 0 ] ; then
@@ -36,4 +37,21 @@ echo -n "Starting the $COMPONENT Compnent : "
 systemctl enable mongod    &>> $LOGFILE
 systemctl daemon-reload    &>> $LOGFILE
 systemctl start mongod     &>> $LOGFILE
+systemctl restart mongod    &>> $LOGFILE
 stat $?
+
+echo -n " Dowloading $COMPONENT schema :"
+curl -s -L -o /tmp/mongodb.zip $MONGO_SCHEMA
+stat $?
+
+echo -n "Extracting $COMPONENT the schema"
+unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+stat $?
+
+echo -n "Injecting the schema"
+cd /tmp/mongodb-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
+
+echo -e "********* \e[35m $COMPONENT Configuring completed  \e[0m ************"
