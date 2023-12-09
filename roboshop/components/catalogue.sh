@@ -1,7 +1,9 @@
+#!/bin/bash
+
 USER_ID=$(id -u)
-COMPONENT=mongo
+COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
-MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+CAT_REPO="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
 MONGO_SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
 stat() {
@@ -17,3 +19,13 @@ echo " This scrip is to be executed with sudo or as a root user "
 echo " Example Usage : sudo bash scripname componetname"
 exit 1
 fi 
+
+echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
+
+echo -n " Configuring $COMPONENT repo : "
+yum install  $CAT_REPO -y    &>> $LOGFILE
+stat $?
+
+echo -n " Installing $COMPONENT nodjs : "
+yum install nodejs -y   &>> $LOGFILE
+stat $?
