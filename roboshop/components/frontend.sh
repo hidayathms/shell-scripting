@@ -27,11 +27,14 @@ echo -e "\e[32m Success \e[0m"
 else
 echo -e "\e[34m Failure \e[0m"
 fi
+echo -n "Cleanup of $1 component : "
+cd /usr/share/nginx/html
+rm -rf *    &>> /tmp/frontend.log
+
 
 # systemctl enable nginx
 # systemctl start nginx
-# cd /usr/share/nginx/html
-# rm -rf *
+
 # unzip /tmp/frontend.zip
 # mv frontend-main/* .
 # mv static/* .
