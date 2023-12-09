@@ -52,7 +52,7 @@ unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
 echo -n " Configuring  $COMPOENT permissions : "
-mv /home/$APPUSER/catalogue-main /home/$APPUSER/${COMPOENT}
+mv /home/$APPUSER/catalogue-main /home/$APPUSER/catalogue
 chown -R $APPUSER:$APPUSER /home/${APPUSER}/${COMPOENT}
 chmod -R 770 /home/${APPUSER}/${COMPOENT}
 stat $?
