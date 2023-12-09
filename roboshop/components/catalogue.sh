@@ -37,8 +37,9 @@ if [ $? -ne 0 ] ; then
 useradd $APPUSER
 stat $?
 else
-echo -e "Skipping"
+echo -e "\e[34m Skipping \e[0"
 fi
+
 
 
 # echo -n " Dowloading $COMPONENT data :"
