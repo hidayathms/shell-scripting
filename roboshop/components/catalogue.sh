@@ -71,5 +71,9 @@ stat $?
 echo -n " Configure the service : "
 cd /home/$APPUSER/catalogue
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
-mv /home/$APPUSER/catalogue/systemd.service /etc/systemd/system/catalogue.service
+stat $?
+
+echo -n " Moviing the service file : "
+cd /home/$APPUSER/catalogue
+mv systemd.service /etc/systemd/system/$COMPOENT.service
 stat $?
