@@ -45,6 +45,7 @@ curl -s -L -o /tmp/mongodb.zip $MONGO_SCHEMA
 stat $?
 
 echo -n "Extracting $COMPONENT schema"
+cd /tmp
 unzip -o /tmp/mongodb.zip  &>> $LOGFILE
 stat $?
 
