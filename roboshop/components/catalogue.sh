@@ -6,7 +6,7 @@ LOGFILE="/tmp/${COMPONENT}.log"
 CAT_REPO="https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm"
 CAT_DATA="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 APPUSER="roboshop"
-APPUSER_HOME="/home/${APPUSER}/${COMPOENT}"
+APPUSER_HOME="/home/roboshop/catalogue"
 
 stat() {
         if [ $1 -eq 0 ] ; then
@@ -45,6 +45,7 @@ stat $?
 else
 echo -e "\e[32m Skipping \e[0m"
 fi
+
 
 
 
