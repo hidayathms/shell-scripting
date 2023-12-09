@@ -34,13 +34,13 @@ rm -rf *    &>> $LOGFILE
 stat $?
 
 echo -n " Extracting the $COMPONENT : "
-unzip /tmp/frontend.zip  &>> $LOGFILE
+unzip /tmp/$COMPONENT.zip  &>> $LOGFILE
 stat $?
 
 echo -n "Configuring $COMPONENT Compnenet: "
-mv frontend-main/* .
+mv $COMPONENT-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+rm -rf $COMPONENT-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
