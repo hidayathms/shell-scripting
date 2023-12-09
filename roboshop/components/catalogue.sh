@@ -66,7 +66,7 @@ stat $?
 
 echo -n " Generating Artifacts : "
 cd /home/$APPUSER/catalogue
-npm install     
+npm install     &>> $LOGFILE
 stat $?
 
 # echo -n " Configure the service : "
