@@ -44,8 +44,8 @@ echo -n " Dowloading $COMPONENT schema :"
 curl -s -L -o /tmp/mongodb.zip $MONGO_SCHEMA
 stat $?
 
-echo -n "Extracting $COMPONENT the schema"
-unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+echo -n "Extracting $COMPONENT schema"
+unzip -o /tmp/mongodb.zip  &>> $LOGFILE
 stat $?
 
 echo -n "Injecting the schema"
