@@ -64,5 +64,6 @@ echo -e "\e[32m Success \e[0m"
 else
 echo -e "\e[34m Failure \e[0m"
 fi
-# 
+
+echo -e "********* \e[35m $1 Configuring completed  \e[0m ************"
 
