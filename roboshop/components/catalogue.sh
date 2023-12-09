@@ -68,3 +68,6 @@ cd /home/$APPUSER/catalogue
 npm install     &>> $LOGFILE
 stat $?
 
+echo -n " Configure the service : "
+sec -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /systemd.service
+stat $?
