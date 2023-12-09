@@ -36,12 +36,33 @@ else
 echo -e "\e[34m Failure \e[0m"
 fi
 
-# systemctl enable nginx
-# systemctl start nginx
+echo -n " Extracting the $1 : "
+unzip /tmp/frontend.zip  &>> /tmp/frontend.log
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[34m Failure \e[0m"
+fi
 
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
+echo -n "Configuring $1 Compnenet: "
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[34m Failure \e[0m"
+fi
+
+echo -n "Restarting the $1 Compnent : "
+systemctl enable nginx      &>> /tmp/frontend.log
+systemctl daemon-reload     &>> /tmp/frontend.log
+systemctl restart nginx     &>> /tmp/frontend.log
+if [ $? -eq 0 ] ; then
+echo -e "\e[32m Success \e[0m"
+else
+echo -e "\e[34m Failure \e[0m"
+fi
+# 
 
