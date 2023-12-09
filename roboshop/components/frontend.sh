@@ -20,7 +20,7 @@ fi
 
 echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
 
-echo -n " Installing NGINX"
+echo -n " Installing NGINX on $COMPONENT"
 yum install nginx -y &>> $LOGFILE
 stat $?
 
