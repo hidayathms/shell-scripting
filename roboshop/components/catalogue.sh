@@ -25,9 +25,7 @@ fi
 echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
 
 echo -n " Configuring $COMPONENT repo : "
-if [ $CAT_REPO -ne 0 ] ; then
 yum install  $CAT_REPO -y    &>> $LOGFILE
-else 
 stat $?
 
 echo -n " Installing $COMPONENT nodjs : "
