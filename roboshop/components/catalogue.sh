@@ -70,5 +70,5 @@ stat $?
 
 echo -n " Configure the service : "
 cd /home/$APPUSER/catalogue
-sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /systemd.service
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
 stat $?
