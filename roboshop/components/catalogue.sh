@@ -31,9 +31,15 @@ echo -n " Installing $COMPONENT nodjs : "
 yum install nodejs -y   &>> $LOGFILE
 stat $?
 
+
+id $APPUSER
+if [$? -ne 0] ; then
 echo -n " Create new user in $COMPONENT  : "
 useradd $APPUSER
 stat $?
+else
+echo -e "Skipping"
+fi
 
 
 # echo -n " Dowloading $COMPONENT data :"
