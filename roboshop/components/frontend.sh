@@ -12,11 +12,11 @@ stat() {
     fi
 }
 
-# if [$USER_ID -ne 0] ; then
-# echo " This scrip is to be executed with sudo or as a root user "
-# echo " Example Usage : sudo bash scripname componetname"
-# exit 1
-# fi 
+if [$USER_ID -ne 0] ; then
+echo " This scrip is to be executed with sudo or as a root user "
+echo " Example Usage : sudo bash scripname componetname"
+exit 1
+fi 
 
 echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
 
