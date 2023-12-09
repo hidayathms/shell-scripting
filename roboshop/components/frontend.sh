@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=$1
-LOGFILE="/tmp/frontend.log"
+LOGFILE="/tmp/${COMPONENT}.log"
 
 stat() {
         if [ $1 -eq 0 ] ; then
