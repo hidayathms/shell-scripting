@@ -63,7 +63,7 @@ chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 stat $?
 
-echo - n " Generating Artifacts : "
+echo -n " Generating Artifacts : "
 cd /home/$APPUSER/catalogue
 npm install     &>> $LOGFILE
 stat $?
