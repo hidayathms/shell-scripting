@@ -1,5 +1,5 @@
 USER_ID=$(id -u)
-COMPONENT=mongodb
+COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO ="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 
