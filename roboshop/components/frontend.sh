@@ -37,7 +37,7 @@ echo -n " Extracting the $COMPONENT : "
 unzip /tmp/$COMPONENT.zip  &>> $LOGFILE
 stat $?
 
-echo -n "Configuring $COMPONENT Compnenet: "
+echo -n "Configuring $COMPONENT : "
 mv $COMPONENT-main/* .
 mv static/* .
 rm -rf $COMPONENT-main README.md
