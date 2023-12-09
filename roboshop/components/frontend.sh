@@ -22,7 +22,7 @@ echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
 
 echo -n " Installing NGINX"
 yum install nginx -y &>> $LOGFILE
-stat 
+stat $?
 
 echo -n " Downloading the component $COMPONENT : "
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
