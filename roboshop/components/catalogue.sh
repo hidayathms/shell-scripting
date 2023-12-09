@@ -46,8 +46,7 @@ echo -n " Dowloading $COMPONENT data :"
 curl -s -L -o /tmp/catalogue.zip $CAT_DATA
 stat $?
 
-echo -n "Extracting $COMPONENT schema : "
-# cd /home/roboshop
-# unzip -o /tmp/catalogue.zip
-
-# stat $?
+echo -n "Extracting $COMPONENT  : "
+cd /home/roboshop
+unzip -o /tmp/catalogue.zip &>> $LOGFILE
+stat $?
