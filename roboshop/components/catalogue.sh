@@ -37,7 +37,7 @@ if [ $? -ne 0 ] ; then
 useradd $APPUSER
 stat $?
 else
-echo -e "\e[34m Skipping \e[0"
+echo -e "\e[34m Skipping \e[0m"
 fi
 
 
@@ -46,7 +46,7 @@ echo -n " Dowloading $COMPONENT data :"
 curl -s -L -o /tmp/catalogue.zip $CAT_DATA
 stat $?
 
-# echo -n "Extracting $COMPONENT schema : "
+echo -n "Extracting $COMPONENT schema : "
 # cd /home/roboshop
 # unzip -o /tmp/catalogue.zip
 
