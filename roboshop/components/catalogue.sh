@@ -33,7 +33,7 @@ stat $?
 
 
 id $APPUSER  &>> $LOGFILE
-if [$? -ne 0] ; then
+if [ $? -ne 0 ] ; then
 echo -n " Create new user in $COMPONENT  : "
 useradd $APPUSER
 stat $?
