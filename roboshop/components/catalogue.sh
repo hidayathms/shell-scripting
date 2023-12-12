@@ -37,14 +37,14 @@ echo -n " Installing $COMPONENT nodjs : "
 yum install nodejs -y   &>> $LOGFILE
 stat $?
 
-echo -n " Create new user in $COMPONENT  : "
-id $APPUSER  &>> $LOGFILE
-if [ $? -ne 0 ] ; then
-useradd $APPUSER
-stat $?
-else
-echo -e "\e[32m Skipping \e[0m"
-fi
+# echo -n " Create new user in $COMPONENT  : "
+# id $APPUSER  &>> $LOGFILE
+# if [ $? -ne 0 ] ; then
+# useradd $APPUSER
+# stat $?
+# else
+# echo -e "\e[32m Skipping \e[0m"
+# fi
 
 
 
@@ -54,23 +54,23 @@ curl -s -L -o /tmp/catalogue.zip $CAT_DATA
 stat $?
 
 echo -n "Extracting $COMPONENT  : "
-cd /home/roboshop
+cd /home/centos
 unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
 echo -n " Configuring  $COMPOENT permissions : "
 mv catalogue-main catalogue   &>> $LOGFILE
-chown -R $APPUSER:$APPUSER $APPUSER_HOME
-chmod -R 770 $APPUSER_HOME
+# chown -R $APPUSER:$APPUSER $APPUSER_HOME
+# chmod -R 770 $APPUSER_HOME
 stat $?
 
 echo -n " Generating Artifacts : "
-cd /home/$APPUSER/catalogue
+cd /home/centos/catalogue
 npm install     &>> $LOGFILE
 stat $?
 
 echo -n " Configure the service : "
-cd $APPUSER_HOME
+cd /home/centos/catalogue
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
 stat $?
 
