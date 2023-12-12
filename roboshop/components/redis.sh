@@ -39,5 +39,4 @@ stat $?
 echo -n "Starting the $COMPONENT Compnent : "
 systemctl enable redis
 systemctl start redis
-systemctl status redis -l
 stat $?
