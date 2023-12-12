@@ -68,7 +68,7 @@ chmod -R 770 $APPUSER_HOME
 stat $?
 
 echo -n " Generating Artifacts : "
-cd /home/roboshop/user/
+cd /home/roboshop/user
 npm install     &>> $LOGFILE
 stat $?
 
