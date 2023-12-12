@@ -59,7 +59,7 @@ unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
 echo -n " Configuring  $COMPOENT permissions : "
-mv /home/roboshop/catalogue-main $APPUSER_HOME   &>> $LOGFILE
+mv /home/roboshop/catalogue-main /home/roboshop/catalogue   &>> $LOGFILE
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 stat $?
