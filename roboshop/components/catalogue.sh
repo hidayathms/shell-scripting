@@ -58,7 +58,7 @@ cd /home/centos
 unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
-echo -n " Configuring  $COMPOENT permissions : "
+echo -n " Configuring  $COMPOENT permissions : " || true
 mv catalogue-main catalogue   &>> $LOGFILE
 # chown -R $APPUSER:$APPUSER $APPUSER_HOME
 # chmod -R 770 $APPUSER_HOME
