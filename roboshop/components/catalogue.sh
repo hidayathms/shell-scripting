@@ -75,7 +75,7 @@ stat $?
 echo -n " Configure the service : "
 cd /home/centos/catalogue
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
-mv systemd.service /etc/systemd/system/$COMPOENT.service
+mv systemd.service /etc/systemd/system/catalogue.service
 stat $?
 
 
