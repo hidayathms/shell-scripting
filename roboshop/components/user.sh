@@ -57,7 +57,7 @@ stat $?
 # rm -rf /home/centos/catalogue &>> $LOGFILE
 
 echo -n "Extracting $COMPONENT  : "
-cd /home/roboshp
+cd /home/roboshop
 unzip -o /tmp/user.zip &>> $LOGFILE
 stat $?
 
