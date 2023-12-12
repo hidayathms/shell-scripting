@@ -50,7 +50,7 @@ fi
 
 
 echo -n " Dowloading $COMPONENT data :"
-curl -s -L -o /tmp/user.zip $USER_DATA
+curl -s -L -o /tmp/user.zip $USER_DATA  &>> $LOGFILE
 stat $?
 
 # echo -n " Performing cleanup of $component : "
