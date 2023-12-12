@@ -34,3 +34,10 @@ echo -n " Configure the service : "
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis/redis.conf
 stat $?
+
+
+echo -n "Starting the $COMPONENT Compnent : "
+systemctl enable redis
+systemctl start redis
+systemctl status redis -l
+stat $?
