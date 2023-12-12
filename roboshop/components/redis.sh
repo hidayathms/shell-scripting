@@ -23,11 +23,11 @@ stat() {
 echo -e "********* \e[35m Configuring $COMPONENT  \e[0m ************"
 
 echo -n " Configuring $COMPONENT repo : "
-curl -L  $URL_REPO -o /etc/yum.repos.d/redis.repo
+curl -L  $URL_REPO -o /etc/yum.repos.d/redis.repo &>> $LOGFILE
 stat $?
 
 echo -n " Installing $COMPONENT : "
 yum install redis-6.2.13 -y  &>> $LOGFILE
 stat $?
 
-echo -n " Configure the service : "
+# echo -n " Configure the service : "
