@@ -53,6 +53,9 @@ echo -n " Dowloading $COMPONENT data :"
 curl -s -L -o /tmp/catalogue.zip $CAT_DATA
 stat $?
 
+echo -n " Performing cleanup of $component : "
+rm -rf /home/centos/catalogue &>> $LOGFILE
+
 echo -n "Extracting $COMPONENT  : "
 cd /home/centos
 unzip -o /tmp/catalogue.zip &>> $LOGFILE
