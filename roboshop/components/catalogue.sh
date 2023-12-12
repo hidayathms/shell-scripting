@@ -58,7 +58,7 @@ cd /home/centos
 unzip -o /tmp/catalogue.zip &>> $LOGFILE
 stat $?
 
-echo -n " Configuring  $COMPOENT permissions : " || true
+echo -n " Configuring  $COMPOENT permissions : " 
 mv catalogue-main catalogue   &>> $LOGFILE
 # chown -R $APPUSER:$APPUSER $APPUSER_HOME
 # chmod -R 770 $APPUSER_HOME
@@ -72,17 +72,12 @@ stat $?
 echo -n " Configure the service : "
 cd /home/centos/catalogue
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' systemd.service
-stat $?
-
-echo -n " Moviing the service file : "
-cd /home/centos/catalogue
 mv systemd.service /etc/systemd/system/$COMPOENT.service
 stat $?
 
 
 echo -n "Starting the $COMPONENT Compnent : "
 systemctl daemon-reload
-systemctl start catalogue
 systemctl enable catalogue
-systemctl status catalogue -l
+systemctl restart catalogue -l
 stat $?
