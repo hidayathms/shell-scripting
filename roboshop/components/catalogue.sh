@@ -83,5 +83,5 @@ echo -n "Starting the $COMPONENT Compnent : "
 cd /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable catalogue
-systemctl start catalogue 
+systemctl restart catalogue 
 stat $?
