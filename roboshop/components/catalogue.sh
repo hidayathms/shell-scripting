@@ -78,3 +78,11 @@ echo -n " Moviing the service file : "
 cd /home/centos/catalogue
 mv systemd.service /etc/systemd/system/$COMPOENT.service
 stat $?
+
+
+echo -n "Starting the $COMPONENT Compnent : "
+systemctl daemon-reload
+systemctl start catalogue
+systemctl enable catalogue
+systemctl status catalogue -l
+stat $?
