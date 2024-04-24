@@ -14,4 +14,6 @@ echo "First Argument : $3"
 
 echo $0  # print script name
 echo $#  # Prints the overall arguments used in the script
-echo $? # This prints the exit code of the last command
+echo $?  # This prints the exit code of the last command
+echo $*  # Ptints all the arguments used
+echo $@  # This will print used arguments
