@@ -10,7 +10,7 @@ b=abc
 # In bash, everything is considered as string by default.
 # How can you print a varable?$var
 
-echo printing the value of $a 
-echo pringing the value of ${b}
+echo -e "\e[34m printing the value of $a \e[0m" 
+echo -e "\e[35m pringing the value of ${b} \e[0m"
 
 
