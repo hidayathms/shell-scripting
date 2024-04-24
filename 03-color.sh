@@ -10,6 +10,6 @@ echo -e "\e[34m I am printing Blue color \e[0m"
 
 ###Background + Foreground Color 
 
-echo -e "e\[43;34m I am printing both the colors \e[0m"
+echo -e "e\[43m;34m I am printing both the colors \e[0m"
 
 
