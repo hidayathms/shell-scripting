@@ -5,5 +5,5 @@
 
 echo Welcome To Shell Scripting
 echo "This is day 1 of shell scripting"
-echo Line1\n Line2
-echo Line3\t Line 4
+echo Line1\nLine2
+echo Line3 \tLine4
