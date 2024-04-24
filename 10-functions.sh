@@ -15,7 +15,7 @@
 #}
 
 # How do you call a function
-f # call funtion
+#f # call funtion
 
 
 b56(){
@@ -25,3 +25,5 @@ b56(){
     data
     echo " Funcation b56 completed"
 }
+
+b56
