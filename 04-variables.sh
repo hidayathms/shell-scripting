@@ -11,6 +11,7 @@ b=abc
 # How can you print a varable?$var
 
 echo -e "\e[34m printing the value of $a \e[0m" 
-echo -e "\e[35m pringing the value of ${b} \e[0m"
+echo -e "\e[35m pringing the value of ${b} \e[0m"   # ${a} $a ; both are same
 
+# rm -rf /data/prod/${CUSTDATA} == rm -rf /data/prod 
 
