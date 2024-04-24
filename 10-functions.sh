@@ -27,3 +27,9 @@ b56(){
 }
 
 b56
+
+stat(){
+    echo "Number of sesstios opened $(who|wc -l)"
+    echo "Todays date is $(date +%F) "
+    b56
+}
