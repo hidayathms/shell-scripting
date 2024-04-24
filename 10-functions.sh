@@ -22,7 +22,7 @@ b56(){
     echo " This is batch b56 funtion"
     echo " We are leaning functions"
     echo " Todays date is :"
-    data
+    date
     echo " Funcation b56 completed"
 }
 
