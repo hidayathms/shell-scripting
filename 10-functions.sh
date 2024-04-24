@@ -26,7 +26,7 @@ b56(){
     echo " Funcation b56 completed"
 }
 
-b56
+
 
 stat(){
     echo "Number of sesstios opened :  $(who|wc -l)"
