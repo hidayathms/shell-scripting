@@ -5,3 +5,5 @@
 
 echo Welcome To Shell Scripting
 echo "This is day 1 of shell scripting"
+Line1
+line2
