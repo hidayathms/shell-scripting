@@ -32,5 +32,3 @@ else
    exit 3
 fi
 
-echo " It has not met any conditions"
-exit 100
