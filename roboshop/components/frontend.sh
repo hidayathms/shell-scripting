@@ -6,14 +6,10 @@ if [ $UID -ne 0 ] ; then
 echo " This script is expected to be executed with sudo or as a addministrator or root user"
 exit 1
 fi
-
-
-
 echo -e " \e[34m********Configuring frontend ******\e[0m"
 
-
 echo -e " \e[31m**Installing ngnix  **\e[0m"
-dnf install nginx -y 
+dnf install nginx -y >/tmp/$1.logs 
 
 
 # systemctl enable nginx
