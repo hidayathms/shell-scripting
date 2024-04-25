@@ -12,9 +12,9 @@ echo -e -n " \e[31m**Installing ngnix  **   : \e[0m"
 dnf install nginx -y &>> /tmp/frontend.logs 
 
 if [ $? -eq 0 ] ; then
-    echo " Success"
+    echo "\e[32m Success \e[0m"
 else 
-    echo " Failure"
+    echo " \e[31m Failure \e[0m"
 fi
 
 
