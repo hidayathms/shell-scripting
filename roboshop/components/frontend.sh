@@ -2,7 +2,7 @@
 
 UID=$(id -u)
 
-if [$UID -ne 0 ] ; then
+if [ $UID -ne 0 ] ; then
 echo " This script is expected to be executed with sudo or as a addministrator or root user"
 exit 1
 fi
