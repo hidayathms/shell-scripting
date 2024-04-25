@@ -15,7 +15,7 @@
 #}
 
 # How do you call a function
-#f # call funtion
+#f call funtion
 
 
 b56(){
