@@ -7,11 +7,15 @@
 # 2) while loop - When you dont know something to be executed n number of times we use while loops
 
 
-# for loop syntax
 
-echo value is 10
-echo value is 20
-echo value is 30
-echo value is 40
-echo value is 50
-echo value is 50
+# echo value is 10
+# echo value is 20
+# echo value is 30
+# echo value is 40
+# echo value is 50
+# echo value is 50
+
+# for loop syntax
+for i in 10 20 30 40 50 ; do 
+    echo " value from the loop are $i"
+done
