@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo  " Configuring frontend"
+echo  " Configuring/$1.sh "
