@@ -19,7 +19,7 @@ ACTION=$1
  
 if [ "$ACTION" == "start" ]; then
     echo "shippping starting"
-    exit 0
+   
 fi
 
 echo " It has not met any conditions"
