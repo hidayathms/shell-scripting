@@ -17,6 +17,6 @@ echo -e "Demon on If, Else and Else If Usage"
 
 ACTION=$1
 
-if [$ACTION=start]; then
+if [$ACTION == start]; then
     echo "shippping starting"
 fi
