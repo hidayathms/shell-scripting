@@ -9,7 +9,7 @@ fi
 echo -e " \e[34m********Configuring frontend ******\e[0m"
 
 echo -e " \e[31m**Installing ngnix  **\e[0m"
-dnf install nginx -y >/tmp/$1.logs 
+dnf install nginx -y > /tmp/frontend.logs 
 
 
 # systemctl enable nginx
