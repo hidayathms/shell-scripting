@@ -16,6 +16,6 @@
 # echo value is 50
 
 # for loop syntax
-for i in 10 20 30 40 50 ; do 
-    echo " value from the loop are $i"
+for n in 10 20 30 40 50 ; do 
+    echo " value from the loop are $n"
 done
