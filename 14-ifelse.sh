@@ -20,6 +20,9 @@ ACTION=$1
 if [ "$ACTION" == "start" ]; then
     echo "shippping starting"
    exit 0
+else
+   echo "valid option is start only"
+   exit 1
 fi
 
 echo " It has not met any conditions"
