@@ -8,7 +8,7 @@ exit 1
 fi
 echo -e " \e[34m********Configuring frontend ******\e[0m"
 
-echo -e -n " \e[31m**Installing ngnix  **\e[0m"
+echo -e -n " \e[31m**Installing ngnix  **   : \e[0m"
 dnf install nginx -y &>> /tmp/frontend.logs 
 
 if [ $? -eq 0 ] ; then
