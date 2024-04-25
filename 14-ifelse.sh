@@ -20,9 +20,16 @@ ACTION=$1
 if [ "$ACTION" == "start" ]; then
     echo "shippping starting"
    exit 0
-else
-   echo "valid option is start only"
+
+elif [ "ACTION" == "stop"]; then 
+ echo "shippping stoping"
    exit 1
+   elif [ "ACTION" == "restart"]; then 
+ echo "shippping restarting"
+   exit 2
+else
+   echo "valid option is start, stop and restart only"
+   exit 3
 fi
 
 echo " It has not met any conditions"
