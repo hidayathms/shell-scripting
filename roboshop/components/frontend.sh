@@ -1,5 +1,14 @@
 #!/bin/bash
 
+UID=$(id -u)
+
+if [$UIF -nr 0 ] ; then
+echo " This script is expected to be executed with sudo or as a addministrator or root user"
+exit 1
+fi
+
+
+
 echo -e " \e[34m********Configuring frontend ******\e[0m"
 
 
