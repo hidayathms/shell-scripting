@@ -21,10 +21,10 @@ if [ "$ACTION" == "start" ]; then
     echo "shippping starting"
    exit 0
 
-elif [ "ACTION" == "stop"]; then 
+elif [ "ACTION" == "stop" ]; then 
  echo "shippping stoping"
    exit 1
-   elif [ "ACTION" == "restart"]; then 
+elif [ "ACTION" == "restart" ]; then 
  echo "shippping restarting"
    exit 2
 else
