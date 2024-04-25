@@ -27,5 +27,5 @@ case $ACTION in
         ;;
     *)
         echo -e "\e[35m Valid options are start, sotp or restart only \e[0m"
-        echo -e "\e[35m Example usage: \e[0m bash scriptname.sh start"
+        echo -e "\e[35m Example usage: \e[0m \n\t\t bash scriptname.sh start"
 esac
