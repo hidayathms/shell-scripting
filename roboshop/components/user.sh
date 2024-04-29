@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 COMPONENT=user
 LOGFILE="/tmp/${COMPONENT}".logs
 APPUSER="roboshop"
-COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
+COMPONENT_URL="https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
 
 
