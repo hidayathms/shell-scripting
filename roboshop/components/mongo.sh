@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongo
+COMPONENT=$1
 LOGFILE="/tmp/${COMPONENT}.logs
 MOGO_REPO=https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 
