@@ -67,22 +67,15 @@ cd $APPUSER_HOME
 npm install &>>$LOGFILE
 stat $?
 
-# echo -n " Move $COMPONENT Configuraiton file : "
-# if [ $? -eq 0 ] ; then
-# mv /etc/systemd/system/catalogue.service /home/roboshop/catalogue/systemd.service
-# else
-# echo -e " \e[32m Skipping \e[0m  : "
-# fi
 
 echo -n " Updading $COMPONENT Systemd file : "
-# sudo sed -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' /etc/systemd/system/catalogue.service
 sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' "$APPUSER_HOME/systemd.service"
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
 echo -n " Starting $COMPONENT  :"
-systemctl enable catalogue  &>> $LOGFILE 
 systemctl daemon-reload &>> $LOGFILE 
+systemctl enable catalogue  &>> $LOGFILE 
 systemctl restart catalogue &>> $LOGFILE 
 stat $?
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
