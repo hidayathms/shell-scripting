@@ -69,13 +69,13 @@ stat $?
 
 
 echo -n " Updading $COMPONENT Systemd file : "
-sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' "$APPUSER_HOME/systemd.service"
+sudo sed -i -e 's/MONGO_DNSNAME/mongo.roboshop.internal/' "$APPUSER_HOME/systemd.service"
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
 echo -n " Starting $COMPONENT  :"
 systemctl daemon-reload &>> $LOGFILE 
 systemctl enable catalogue  &>> $LOGFILE 
-systemctl restart catalogue &>> $LOGFILE 
+systemctl start catalogue &>> $LOGFILE 
 stat $?
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
