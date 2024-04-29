@@ -76,6 +76,6 @@ stat $?
 echo -n " Starting $COMPONENT  :"
 systemctl daemon-reload &>> $LOGFILE 
 systemctl enable catalogue  &>> $LOGFILE 
-systemctl start catalogue &>> $LOGFILE 
+systemctl restart catalogue &>> $LOGFILE 
 stat $?
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"

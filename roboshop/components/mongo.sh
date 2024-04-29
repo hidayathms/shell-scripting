@@ -36,7 +36,7 @@ stat $?
 echo -n " Starting $COMPONENT  :"
 systemctl daemon-reload &>> $LOGFILE 
 systemctl enable mongod  &>> $LOGFILE 
-systemctl start mongod &>> $LOGFILE 
+systemctl start mongod  &>> $LOGFILE 
 stat $?
 
 echo -n " Download the schema in $COMPONENT   : "
