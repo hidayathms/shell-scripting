@@ -33,7 +33,7 @@ rm -rf *    &>> $LOGFILE
 stat $?
 
 echo -n "  Extract the $COMPONENT component :"
-unzip /tmp/$COMPONENT.zip     &>> $LOGFILE 
+unzip -o /tmp/$COMPONENT.zip     &>> $LOGFILE 
 stat $?
 
 echo -n "  Configuring $COMPONENT component :"
