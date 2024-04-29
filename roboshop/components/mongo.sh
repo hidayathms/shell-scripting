@@ -29,7 +29,7 @@ dnf install -y mongodb-org  &>> $LOGFILE
 stat $?
 
 echo -n " Update Config file in $COMPONENT   : "
-sed -i -e 's/127.0.0.0/0.0.0.0/g' /etc/mongod.conf
+sudo sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n " Starting $COMPONENT  :"
