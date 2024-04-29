@@ -34,6 +34,5 @@ stat $?
 echo -n " Starting $COMPONENT  :"
 systemctl enable redis  &>> $LOGFILE 
 systemctl daemon-reload &>> $LOGFILE 
-systemctl start redis &>> $LOGFILE 
 systemctl restart redis &>> $LOGFILE 
 stat $?
