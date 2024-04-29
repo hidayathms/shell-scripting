@@ -57,5 +57,10 @@ mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 stat $?
-# $ cd /home/$APPUSER/catalogue
-# $ npm install
+
+echo -n " Generating Artifacts : "
+cd $APPUSER_HOME
+npm install &>>$LOGFILE
+stat $?
+
+
