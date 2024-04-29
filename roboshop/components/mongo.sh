@@ -34,9 +34,9 @@ sudo sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n " Starting $COMPONENT  :"
-systemctl enable mongod  &>> $LOGFILE 
 systemctl daemon-reload &>> $LOGFILE 
-systemctl start mongod &>> $LOGFILE 
+systemctl enable $COMPONENT  &>> $LOGFILE 
+systemctl start $COMPONENT &>> $LOGFILE 
 stat $?
 
 echo -n " Download the schema in $COMPONENT   : "
