@@ -66,4 +66,4 @@ fi
 
 
 
-
+echo -e " \e[34m********$1 Component configuration completed ******\e[0m"
