@@ -39,6 +39,6 @@ useradd $APPUSER
 stat $?
 else 
 echo -n " User account exist : "
-echo -e " Skipping  : "
+echo -e " \e[32m Skipping \e[0m  : "
 fi
 
