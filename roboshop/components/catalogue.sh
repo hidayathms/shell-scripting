@@ -63,14 +63,13 @@ cd $APPUSER_HOME
 npm install &>>$LOGFILE
 stat $?
 
-echo -n " Move $COMPONENT Configuraiton file : "
-if [ $? -ne 0 ] ; then
-mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-else
-echo -e " \e[32m Skipping \e[0m  : "
-fi
+# echo -n " Move $COMPONENT Configuraiton file : "
+# if [ $? -ne 0 ] ; then
+# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+# else
+# echo -e " \e[32m Skipping \e[0m  : "
+# fi
 
-echo -n " Updading $COMPONENT Configuraiton file : "
-cd /etc/systemd/system/
-sed -e -i 's/MONGO_DNSNAME/mongo.roboshop.internal/' catalogue.service
+echo -n " Updading $COMPONENT Systemd file : "
+sed -e -i 's/MONGO_DNSNAME/mongo.roboshop.internal/' $APPUSER_HOME/catalogue.service
 stat $?
