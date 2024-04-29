@@ -22,12 +22,12 @@ fi
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
 
 echo -n " Disabling the default nodejs:10 repo and enabling nodejs18 on $COMPONENT : "
-dnf module disable nodejs -y
-dnf module enable nodejs:18 -y
+dnf module disable nodejs -y &>> $LOGFILE
+dnf module enable nodejs:18 -y  &>> $LOGFILE
 stat $?
 
 echo -n " Installing NodeJS : "
-dnf install nodejs -y 
+dnf install nodejs -y   &>> $LOGFILE
 stat $?
 
 echo -n " Downoloading 
