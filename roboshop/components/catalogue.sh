@@ -75,7 +75,8 @@ stat $?
 # fi
 
 echo -n " Updading $COMPONENT Systemd file : "
-sed -e -i 's/MONGO_DNSNAME/mongo.roboshop.internal/' "$APPUSER_HOME/systemd.service"
+sed -e -i 's/MONGO_DNSNAME/mongo.roboshop.internal/' /etc/systemd/system/catalogue.service
+# sed -e -i 's/MONGO_DNSNAME/mongo.roboshop.internal/' "$APPUSER_HOME/systemd.service"
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
