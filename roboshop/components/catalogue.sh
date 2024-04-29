@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}".logs
 APPUSER="roboshop"
-MONGO_REPO=" https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo "
+COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
 stat(){
@@ -42,3 +42,14 @@ echo -n " User account exist : "
 echo -e " \e[32m Skipping \e[0m  : "
 fi
 
+echo -n " Downloading $COMPONENT : "
+curl -s -L -o /tmp/catalogue.zip $COMPONENT_URL
+stat $?
+
+
+
+$ cd /home/roboshop
+$ unzip /tmp/catalogue.zip
+$ mv catalogue-main catalogue
+$ cd /home/roboshop/catalogue
+$ npm install
