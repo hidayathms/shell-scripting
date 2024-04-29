@@ -38,6 +38,6 @@ echo -n " Creating $APPUSER : "
 useradd $APPUSER
 stat $?
 else 
-echo -n " User account already exist  : "
+echo -e " Skipping  : "
 fi
 
