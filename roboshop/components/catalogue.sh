@@ -64,7 +64,7 @@ npm install &>>$LOGFILE
 stat $?
 
 echo -n " Move $COMPONENT Configuraiton file : "
-if [ $? -ne 0 ] ; then
+if [ $? -eq 0 ] ; then
 mv /etc/systemd/system/catalogue.service /home/roboshop/catalogue/systemd.service
 else
 echo -e " \e[32m Skipping \e[0m  : "
