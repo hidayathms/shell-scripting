@@ -4,6 +4,7 @@ USER_ID=$(id -u)
 COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}".logs
 MONGO_REPO=" https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo "
+SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
 stat(){
     if [ $1 -eq 0 ] ; then
@@ -39,3 +40,5 @@ systemctl start mongod &>> $LOGFILE
 stat $?
 
 echo -n " Download the schema in $COMPONENT   : "
+curl -s -L -o /tmp/mongodb.zip $SCHEMA
+stat $?
