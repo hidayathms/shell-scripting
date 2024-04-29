@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}.logs
-REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+MOGO_REPO=https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 
 stat(){
     if [ $1 -eq 0 ] ; then
@@ -21,7 +21,7 @@ fi
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
 
 echo -n "  Dowonloading repo $COMPONENT : "
-curl -s -o /etc/yum.repos.d/mongodb.repo $REPO
+curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 stat $?
 
 echo -n "  Installing ngnix   : "
