@@ -70,5 +70,6 @@ else
 echo -e " \e[32m Skipping \e[0m  : "
 fi
 
-
-
+echo -n " Updading $COMPONENT Configuraiton file : "
+sed -e -i '/s/MONGO_DNSNAME/mongo.roboshop.internal/' /etc/systemd/system/catalogue.service
+stat $?
