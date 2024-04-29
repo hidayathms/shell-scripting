@@ -32,7 +32,7 @@ sudo sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/redis/redis.conf
 stat $?
 
 echo -n " Starting $COMPONENT  :"
-systemctl enable redis  &>> $LOGFILE 
+# systemctl enable redis  &>> $LOGFILE 
 systemctl daemon-reload &>> $LOGFILE 
 systemctl restart redis &>> $LOGFILE 
 stat $?
