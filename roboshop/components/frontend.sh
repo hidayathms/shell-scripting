@@ -9,7 +9,7 @@ fi
 
 echo -e " \e[34m********Configuring frontend ******\e[0m"
 
-echo -e -n " \e[31m Installing ngnix   : \e[0m"
+echo -e -n "  Installing ngnix   : "
 dnf install nginx -y &>> /tmp/frontend.logs 
 
 if [ $? -eq 0 ] ; then
@@ -18,7 +18,7 @@ else
     echo -e " \e[31m Failure \e[0m"
 fi
 
-echo -e -n " \e[34m Dowonloading component $1   : \e[0m"
+echo -e -n "  Dowonloading component $1   : "
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 if [ $? -eq 0 ] ; then
     echo -e "\e[32m Success \e[0m"
