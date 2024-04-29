@@ -44,8 +44,7 @@ curl -s -L -o /tmp/mongodb.zip $SCHEMA
 stat $?
 
 echo -n " Extracting the schema in $COMPONENT   : "
-cd /tmp
-unzip mongodb.zip
+unzip -o /tmp/mongodb.zip   &>> $LOGFILE
 stat $?
 
 echo -n " Injecting the schema in $COMPONENT   : "
@@ -53,3 +52,4 @@ cd mongodb-main
 mongo < catalogue.js
 mongo < users.js
 stat $?
+echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
