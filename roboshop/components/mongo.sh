@@ -24,7 +24,7 @@ echo -n "  Dowonloading repo $COMPONENT : "
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 stat $?
 
-echo -n " Installing Mongo   : "
-dnf install -y mongodb-org  &>> $LOGFILE 
-stat $?
+# echo -n " Installing Mongo   : "
+# dnf install -y mongodb-org  &>> $LOGFILE 
+# stat $?
 
