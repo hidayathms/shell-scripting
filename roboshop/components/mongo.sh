@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=$1
 LOGFILE="/tmp/${COMPONENT}.logs
-MOGO_REPO=https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
+MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 
 stat(){
     if [ $1 -eq 0 ] ; then
