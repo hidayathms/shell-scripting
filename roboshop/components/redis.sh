@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=redis
-LOGFILE="/tmp/${COMPONENT}".logs
+LOGFILE="/tmp/${COMPONENT}.logs"
 
 stat(){
     if [ $1 -eq 0 ] ; then
