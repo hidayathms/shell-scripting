@@ -63,4 +63,7 @@ cd $APPUSER_HOME
 npm install &>>$LOGFILE
 stat $?
 
+echo -n " Move $COMPONENT Configuraiton file : "
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+stat $?
 
