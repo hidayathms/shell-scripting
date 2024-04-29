@@ -53,7 +53,6 @@ unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
 
 echo -n " Configuring $COMPONENT permissions : "
-cd /home/roboshop
 mv {$APPUSER_HOME}-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
