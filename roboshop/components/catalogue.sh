@@ -33,9 +33,11 @@ stat $?
 
 
 id $APPUSER %>>$LOGFILE
-if [$? -ne 0] ; then
-echo -n " Creating user account in $COMPONENT : "
+if [ $? -ne 0 ] ; then
+echo -n " Creating $APPUSER : "
 useradd $APPUSER
 stat $?
+else 
+echo -n " User account already exist  : "
 fi
 
