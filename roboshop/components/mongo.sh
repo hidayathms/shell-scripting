@@ -20,7 +20,7 @@ fi
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
 
-echo -n "  Dowonloading repo $COMPONENT : "
+echo -n " Dowonloading repo $COMPONENT : "
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 stat $?
 
@@ -29,8 +29,7 @@ dnf install -y mongodb-org  &>> $LOGFILE
 stat $?
 
 echo -n " Update Config file in $COMPONENT   : "
-cd /etc
-sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n " Starting $COMPONENT  :"
@@ -38,3 +37,5 @@ systemctl enable mongod  &>> $LOGFILE
 systemctl daemon-reload &>> $LOGFILE 
 systemctl start mongod &>> $LOGFILE 
 stat $?
+
+echo -n " Download the schema in $COMPONENT   : "
