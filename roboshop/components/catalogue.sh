@@ -52,6 +52,10 @@ cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
 
+echo -n " Performing Cleanup $COMPONENT : "
+rm -rf $APPUSER_HOME    &>> $LOGFILE
+stat $?
+
 echo -n " Configuring $COMPONENT permissions : "
 mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME    &>> $LOGFILE
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
