@@ -43,6 +43,10 @@ rm -rf $COMPONENT-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
+echo -n "  Updating Revere proxy :"
+sed -i -e "/catalogue/s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+stat $?
+
 echo -n "  Restarting $COMPONENT component :"
 systemctl enable nginx  &>> $LOGFILE 
 systemctl daemon-reload &>> $LOGFILE 
