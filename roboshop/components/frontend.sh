@@ -26,16 +26,44 @@ else
     echo -e " \e[31m Failure \e[0m"
 fi
 
+echo -n "  Clean Up of $1 component :"
+cd /usr/share/nginx/html
+rm -rf *    &>> /tmp/frontend.logs
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else 
+    echo -e " \e[31m Failure \e[0m"
+fi
 
-# systemctl enable nginx
-# systemctl start nginx
-# 
-# cd /usr/share/nginx/html
-# rm -rf *
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
+echo -n "  Extract the $1 component :"
+unzip /tmp/frontend.zip     &>> /tmp/frontend.logs
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else 
+    echo -e " \e[31m Failure \e[0m"
+fi
+
+echo -n "  Configuring $1 component :"
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else 
+    echo -e " \e[31m Failure \e[0m"
+fi
+
+echo -n "  Restarting $1 component :"
+systemctl enable nginx  &>> /tmp/frontend.logs
+systemctl daemon-reload &>> /tmp/frontend.logs
+systemctl restart nginx &>> /tmp/frontend.logs
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else 
+    echo -e " \e[31m Failure \e[0m"
+fi
+
+
 
 
