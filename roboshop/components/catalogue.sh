@@ -43,13 +43,14 @@ echo -e " \e[32m Skipping \e[0m  : "
 fi
 
 echo -n " Downloading $COMPONENT : "
-curl -s -L -o /tmp/catalogue.zip $COMPONENT_URL
+curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 stat $?
 
+echo -n " Extracting $COMPONENT : "
+cd /home/roboshop
+unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 
 
-$ cd /home/roboshop
-$ unzip /tmp/catalogue.zip
-$ mv catalogue-main catalogue
-$ cd /home/roboshop/catalogue
-$ npm install
+# $ mv catalogue-main catalogue
+# $ cd /home/roboshop/catalogue
+# $ npm install
