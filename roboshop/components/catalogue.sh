@@ -31,6 +31,11 @@ echo -n " Installing NodeJS : "
 dnf install nodejs -y   &>> $LOGFILE
 stat $?
 
-echo -n " Add user in $COMPONENT : "
+
+id $APPUSER %>>$LOGFILE
+if [$? -ne 0] ; then
+echo -n " Creating user account in $COMPONENT : "
 useradd $APPUSER
 stat $?
+fi
+
