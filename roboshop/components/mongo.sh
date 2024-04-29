@@ -28,3 +28,12 @@ echo -n " Installing Mongo   : "
 dnf install -y mongodb-org  &>> $LOGFILE 
 stat $?
 
+echo -n " Update Config file in $COMPONENT   : "
+sed -i -e 's/127.0.0.1/0.0.0.0/' mongod.conf
+stat $?
+
+echo -n "  Starting $COMPONENT  :"
+systemctl enable mongod  &>> $LOGFILE 
+systemctl daemon-reload &>> $LOGFILE 
+systemctl start mongod &>> $LOGFILE 
+stat $?
