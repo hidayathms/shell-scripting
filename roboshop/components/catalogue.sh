@@ -3,6 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}".logs
+APPUSER="roboshop"
 MONGO_REPO=" https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo "
 SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
@@ -30,4 +31,6 @@ echo -n " Installing NodeJS : "
 dnf install nodejs -y   &>> $LOGFILE
 stat $?
 
-echo -n " Downoloading 
+echo -n " Add user in $COMPONENT : "
+useradd $APPUSER
+stat $?
