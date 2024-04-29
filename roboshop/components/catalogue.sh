@@ -49,8 +49,12 @@ stat $?
 echo -n " Extracting $COMPONENT : "
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+stat $?
 
-
-# $ mv catalogue-main catalogue
-# $ cd /home/roboshop/catalogue
+echo -n " Configuring $COMPONENT permissions : "
+mv /home/$APPUSER/${COMPONENT}-main /home/$APPUSER/${COMPONENT}
+chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}
+chmod -R 770
+stat $?
+# $ cd /home/$APPUSER/catalogue
 # $ npm install
