@@ -2,7 +2,7 @@
 
 USER_ID=$(id -u)
 COMPONENT=$1
-LOGFILE="/tmp/${COMPONENT}.logs
+LOGFILE="/tmp/${COMPONENT}".logs
 
 stat(){
     if [ $1 -eq 0 ] ; then
