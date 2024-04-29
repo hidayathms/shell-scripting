@@ -6,7 +6,7 @@ LOGFILE="/tmp/${COMPONENT}".logs
 APPUSER="roboshop"
 COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
-# SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
+
 
 stat(){
     if [ $1 -eq 0 ] ; then
@@ -53,7 +53,7 @@ unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
 
 echo -n " Configuring $COMPONENT permissions : "
-mv ${$APPUSER_HOME}-main $APPUSER_HOME
+mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 stat $?
