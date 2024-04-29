@@ -42,3 +42,14 @@ stat $?
 echo -n " Download the schema in $COMPONENT   : "
 curl -s -L -o /tmp/mongodb.zip $SCHEMA
 stat $?
+
+echo -n " Extracting the schema in $COMPONENT   : "
+cd /tmp
+unzip mongodb.zip
+stat $?
+
+echo -n " Injecting the schema in $COMPONENT   : "
+cd mongodb-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
