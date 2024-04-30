@@ -76,7 +76,7 @@ stat $?
 
 echo -n " Starting $COMPONENT  :"
 systemctl daemon-reload &>> $LOGFILE 
-systemctl enable $COMPONENT  &>> $LOGFILE 
-systemctl restart $COMPONENT &>> $LOGFILE 
+systemctl enable user  &>> $LOGFILE 
+systemctl restart user &>> $LOGFILE 
 stat $?
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
