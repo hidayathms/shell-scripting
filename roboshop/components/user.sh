@@ -3,6 +3,8 @@
 
 COMPONENT=user
 
+source components/common.sh
+
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
 
 echo -n " Disabling the default nodejs:10 repo and enabling nodejs18 on $COMPONENT : "
