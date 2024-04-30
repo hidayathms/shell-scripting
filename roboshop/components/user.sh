@@ -2,10 +2,7 @@
 
 
 COMPONENT=user
-APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
-APPUSER="roboshop"
-LOGFILE="/tmp/${COMPONENT}.logs"
-COMPONENT_URL="https://github.com/stans-robot-project/catal$COMPONENT/archive/main.zip"
+
 source components/common.sh
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
@@ -56,8 +53,8 @@ stat $?
 
 
 echo -n " Updading $COMPONENT Systemd file : "
-sed -i -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+sed -i -e 's/MONGO_ENDPOINT/172.31.28.86/' ${APPUSER_HOME}/systemd.service
+sed -i -e 's/REDIS_ENDPOINT/172.31.17.183/' ${APPUSER_HOME}/systemd.service
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
