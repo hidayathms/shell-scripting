@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongo
+COMPONENT=mongodb
 LOGFILE="/tmp/${COMPONENT}.logs"
 MONGO_REPO=" https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo "
 SCHEMA="https://github.com/stans-robot-project/mongodb/archive/main.zip"
@@ -52,4 +52,5 @@ cd mongodb-main
 mongo < catalogue.js    &>> $LOGFILE
 mongo < users.js    &>> $LOGFILE
 stat $?
+
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
