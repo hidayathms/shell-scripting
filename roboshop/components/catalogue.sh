@@ -59,7 +59,7 @@ stat $?
 echo -n " Configuring $COMPONENT permissions : "
 mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME    &>> $LOGFILE
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
-chmod -R 770 $APPUSER_HOME
+chmod -R 777 $APPUSER_HOME
 stat $?
 
 echo -n " Generating Artifacts : "
