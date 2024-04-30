@@ -5,6 +5,7 @@ COMPONENT=user
 APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
 APPUSER="roboshop"
 LOGFILE="/tmp/${COMPONENT}.logs"
+COMPONENT_URL="https://github.com/stans-robot-project/catal$COMPONENT/archive/main.zip"
 source components/common.sh
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
