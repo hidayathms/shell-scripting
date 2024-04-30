@@ -4,6 +4,7 @@
 COMPONENT=cart
 APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
 APPUSER="roboshop"
+LOGFILE="/tmp/${COMPONENT}.logs"
 source components/common.sh
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
