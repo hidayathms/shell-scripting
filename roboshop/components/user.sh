@@ -2,7 +2,8 @@
 
 
 COMPONENT=user
-
+APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
+APPUSER="roboshop"
 source components/common.sh
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
