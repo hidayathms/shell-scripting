@@ -53,7 +53,7 @@ stat $?
 
 
 echo -n " Updading $COMPONENT Systemd file : "
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+sed -i -e 's/REDIS_ENDPOINT/172.31.17.183/' -e 's/CATALOGUE_ENDPOINT/172.31.20.135/' ${APPUSER_HOME}/systemd.service
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
