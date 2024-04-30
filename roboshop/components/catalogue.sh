@@ -3,7 +3,7 @@
 
 COMPONENT=catalogue
 
-source compnonets/common.sh
+source components/common.sh
 
 
 echo -e " \e[34m********Configuring $COMPONENT ******\e[0m"
