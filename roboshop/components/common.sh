@@ -41,7 +41,7 @@ echo -n " Installing NodeJS : "
 dnf install nodejs -y   &>> $LOGFILE
 stat $?
 echo -n " Installing NodeJS drivers :"
-dnf install mongodb@latest 
+dnf install mongodb
 stat $?
 
 CREATE_USER
