@@ -33,3 +33,4 @@ fi
 
 echo -n "Uninstalling password-validate-plugin : "
 echo "uninstall plugin validate_password; " | mysql -uroot -pRoboshop@1 &>>LOGFILE
+stat $?
