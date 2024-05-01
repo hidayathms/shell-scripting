@@ -40,6 +40,10 @@ stat $?
 echo -n " Installing NodeJS : "
 dnf install nodejs -y   &>> $LOGFILE
 stat $?
+echo -n " Installing NodeJS drivers :"
+dnf install mongodb@latest 
+stat $?
+
 CREATE_USER
 START_SVC
 }
