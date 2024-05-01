@@ -27,8 +27,8 @@ dnf install redis -y &>>LOGFILE
 stat $?
 
 echo -n " Update Config file in $COMPONENT   : "
-sed -i -e "/bind/s/127.0.0.0/0.0.0.0/" /etc/redis.conf
-sed -i -e '/bind/s/127.0.0.0/0.0.0.0/' /etc/redis/redis.conf
+sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/redis.conf
+sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/redis/redis.conf
 stat $?
 
 
