@@ -7,12 +7,12 @@ source components/common.sh
 echo -e " \e[34m********Configuring $COMPONENT  repo ******\e[0m"
 
 echo -n " Dowonloading repo $COMPONENT : "
-dnf module disable mysql -y $
-curl -s -L -o /etc/yum.repos.d/mysql.repo $MYSQL_REPO
+dnf module disable mysql -y &>> $LOGFILE 
+curl -s -L -o /etc/yum.repos.d/mysql.repo $MYSQL_REPO &>> $LOGFILE 
 stat $?
 
 echo -n " Installing  $COMPONENT : "
-dnf install mysql-community-server -y
+dnf install mysql-community-server -y &>> $LOGFILE 
 stat $?
 
 echo -n " Starting $COMPONENT  :"
