@@ -20,46 +20,45 @@ fi
 
 CREATE_USER(){
 
-id $APPUSER &>>$LOGFILE
-if [ $? -ne 0 ] ; then
-echo -n " Creating $APPUSER : "
-useradd $APPUSER
-stat $?
-else 
-echo -n " User account exist : "
-echo -e " \e[32m Skipping \e[0m  : "
-fi
+    id $APPUSER &>>$LOGFILE
+    if [ $? -ne 0 ] ; then
+    echo -n " Creating $APPUSER : "
+    useradd $APPUSER
+    stat $?
+    else 
+    echo -n " User account exist : "
+    echo -e " \e[32m Skipping \e[0m  : "
+    fi
 }
 
 NODEJS(){
-echo -n " Disabling the default nodejs:10 repo and enabling nodejs18 on $COMPONENT : "
-dnf module disable nodejs -y &>> $LOGFILE
-dnf module enable nodejs:18 -y  &>> $LOGFILE
-stat $?
+    echo -n " Disabling the default nodejs:10 repo and enabling nodejs18 on $COMPONENT : "
+    dnf module disable nodejs -y &>> $LOGFILE
+    dnf module enable nodejs:18 -y  &>> $LOGFILE
+    stat $?
 
-echo -n " Installing NodeJS : "
-dnf install nodejs -y   &>> $LOGFILE
-stat $?
+    echo -n " Installing NodeJS : "
+    dnf install nodejs -y   &>> $LOGFILE
+    stat $?
 
-
-CREATE_USER
+    CREATE_USER
 
 }
 
 DOWNLOAD_AND_EXTRACT(){
   
-echo -n " Downloading $COMPONENT : "
-curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
-stat $?
+    echo -n " Downloading $COMPONENT : "
+    curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
+    stat $?
 
-echo -n " Performing Cleanup $COMPONENT : "
-rm -rf $APPUSER_HOME    &>> $LOGFILE
-stat $?  
+    echo -n " Performing Cleanup $COMPONENT : "
+    rm -rf $APPUSER_HOME    &>> $LOGFILE
+    stat $?  
 
-echo -n " Extracting $COMPONENT : "
-cd /home/roboshop
-unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
-stat $?
+    echo -n " Extracting $COMPONENT : "
+    cd /home/roboshop
+    unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+    stat $?
 
 
 }
