@@ -50,14 +50,16 @@ echo -n " Downloading $COMPONENT : "
 curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 stat $?
 
+echo -n " Performing Cleanup $COMPONENT : "
+rm -rf $APPUSER_HOME    &>> $LOGFILE
+stat $?  
+
 echo -n " Extracting $COMPONENT : "
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
 stat $?
 
-echo -n " Performing Cleanup $COMPONENT : "
-rm -rf $APPUSER_HOME    &>> $LOGFILE
-stat $?  
+
 }
 
 CONFIG_SVC(){
@@ -74,7 +76,7 @@ CONFIG_SVC(){
 
 
     echo -n " Updading $COMPONENT Systemd file : "
-    sudo sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.ineternal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.ineternal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    sudo sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.ineternal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.ineternal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue/' ${APPUSER_HOME}/systemd.service
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $?
 
