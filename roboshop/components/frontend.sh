@@ -44,7 +44,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 echo -n "  Updating Revere proxy :"
-sed -i -e "/$COMPONENT/s/localhost/${COMPONENT}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+sed -i -e "/catalogue/s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 # for component in catalogue user cart ; do
 # sed -i -e "/${component}/s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 # done
