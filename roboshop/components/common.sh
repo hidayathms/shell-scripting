@@ -88,7 +88,7 @@ CONFIG_SVC(){
 START_SVC(){
     echo -n " Starting $COMPONENT  :"
     systemctl daemon-reload
-    systemctl start $COMPONENT &>> $LOGFILE 
+    systemctl restart $COMPONENT &>> $LOGFILE 
     systemctl enable $COMPONENT  &>> $LOGFILE 
    
 stat $?
