@@ -74,7 +74,7 @@ CONFIG_SVC(){
 
 
     echo -n " Updading $COMPONENT Systemd file : "
-    sudo sed -i -e 's/MONGO_DNSNAME/172.31.28.86/' -e 's/MONGO_ENDPOINT/172.31.28.86/' -e 's/REDIS_ENDPOINT/172.31.17.183/' -e 's/CATALOGUE_ENDPOINT/172.31.20.135/' ${APPUSER_HOME}/systemd.service
+    sudo sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.ineternal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.ineternal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $?
 
