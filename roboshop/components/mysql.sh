@@ -28,7 +28,8 @@ echo " show databases;" | mqsql -uroot -pRoboshop@1 &>> $LOGFILE
 if [ $? -ne 0 ] ; then
 echo -n " Changing the default root password: "
 echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Roboshop@1'" | mysql --connect-expired-password -uroot -p$DEFAULT_ROOT_PASS &>> $LOGFILE 
+stat $?
 else
 echo " Skipping"
-stat $?
+
 fi 
