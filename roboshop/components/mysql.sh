@@ -1,0 +1,3 @@
+#!/bin/bash
+
+COMPONENT=frontend
