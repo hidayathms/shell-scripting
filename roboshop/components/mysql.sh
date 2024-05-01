@@ -2,6 +2,7 @@
 
 COMPONENT=mysql
 MYSQL_REPO="https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo"
+MYSQL_SCHEMA="https://github.com/stans-robot-project/mysql/archive/main.zip"
 source components/common.sh
 
 echo -e " \e[34m********Configuring $COMPONENT  repo ******\e[0m"
@@ -37,3 +38,7 @@ echo -n "Uninstalling password-validate-plugin : "
 echo "uninstall plugin validate_password;" | mysql -uroot -pRoboshop@1 &>> $LOGFILE
 stat $?
 fi
+
+echo -n "Download & Inject the schema : "
+curl -s -L -o /tmp/mysql.zip $MYSQL_SCHEMA
+
