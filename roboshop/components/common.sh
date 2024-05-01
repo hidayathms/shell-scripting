@@ -40,12 +40,10 @@ stat $?
 echo -n " Installing NodeJS : "
 dnf install nodejs -y   &>> $LOGFILE
 stat $?
-echo -n " Installing NodeJS drivers :"
-dnf install mongodb@6.5
-stat $?
+
 
 CREATE_USER
-START_SVC
+
 }
 
 DOWNLOAD_AND_EXTRACT(){
@@ -89,8 +87,9 @@ CONFIG_SVC(){
 
 START_SVC(){
     echo -n " Starting $COMPONENT  :"
-    systemctl daemon-reload &>> $LOGFILE 
+    systemctl daemon-reload
+    systemctl start $COMPONENT &>> $LOGFILE 
     systemctl enable $COMPONENT  &>> $LOGFILE 
-    systemctl restart $COMPONENT &>> $LOGFILE 
+   
 stat $?
 }
