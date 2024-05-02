@@ -49,7 +49,7 @@ stat $?
 
 echo -n "Injecting  the schema : "
 cd ${COMPONENT}-main
-mysql -uroot -pRoboShop@1 <shipping.sql &>> $LOGFILE
+mysql -uroot -pRoboshop@1 <shipping.sql &>> $LOGFILE
 stat $?
 
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
