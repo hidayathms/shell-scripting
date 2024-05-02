@@ -20,6 +20,7 @@ echo -n " Starting $COMPONENT  :"
 systemctl enable rabbitmq-server &>>LOGFILE
 systemctl start rabbitmq-server &>>LOGFILE
 systemctl status rabbitmq-server -l &>>LOGFILE
+stat $?
 
 echo -n " Creating $APPUSER for $COMPONENT : "
 rabbitmqctl add_user roboshop roboshop123
