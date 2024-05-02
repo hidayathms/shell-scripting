@@ -70,10 +70,10 @@ CONFIG_SVC(){
     chmod -R 777 $APPUSER_HOME
     stat $?
     
-    echo -n " Generating Artifacts : "
+    # echo -n " Generating Artifacts : "
     # cd $APPUSER_HOME
-    npm install &>>$LOGFILE
-    stat $?
+    # npm install &>>$LOGFILE
+    # stat $?
 
 
     echo -n " Updading $COMPONENT Systemd file : "
