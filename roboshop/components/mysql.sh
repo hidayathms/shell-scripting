@@ -44,8 +44,7 @@ curl -s -L -o /tmp/${COMPONENT}.zip $MYSQL_SCHEMA
 stat $?
 
 echo -n "Extracting and Injecting the schema : "
-cd /tmp
-unzip -o ${COMPONENT}.zip   &>> $LOGFILE
+unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
 cd ${COMPONENT}-main
 mysql -u root -pRoboShop@1 <shipping.sql    &>> $LOGFILE
 stat $?
