@@ -43,10 +43,13 @@ echo -n "Downloading  the $COMPONENT schema : "
 curl -s -L -o /tmp/${COMPONENT}.zip $MYSQL_SCHEMA
 stat $?
 
-echo -n "Extracting and Injecting the schema : "
+echo -n "Extracting  the schema : "
 unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
+stat $?
+
+echo -n "Injecting  the schema : "
 cd ${COMPONENT}-main
-mysql -u root -pRoboShop@1 <shipping.sql    &>> $LOGFILE
+mysql -uroot -pRoboShop@1 <shipping.sql &>> $LOGFILE
 stat $?
 
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
