@@ -31,5 +31,6 @@ fi
 echo -n " Sorting permissions to $COMPONENT : "
 rabbitmqctl set_user_tags roboshop administrator
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+stat $?
 
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
