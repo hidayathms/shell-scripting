@@ -67,8 +67,9 @@ DOWNLOAD_AND_EXTRACT(){
     stat $?  
 
     echo -n " Extracting $COMPONENT : "
-    cd /home/roboshop
+    cd /home/${APPUSER}
     unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+    mv /home/${APPUSER}/${COMPONENT}-main /home/${APPUSER}/${COMPONENT}
     stat $?
 
 
@@ -76,14 +77,11 @@ DOWNLOAD_AND_EXTRACT(){
 
 CONFIG_SVC(){
     echo -n " Configuring $COMPONENT permissions : "
-    mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME    &>> $LOGFILE
+    # mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME    &>> $LOGFILE
     chown -R $APPUSER:$APPUSER $APPUSER_HOME
     chmod -R 777 $APPUSER_HOME
     stat $?
     
-    
-
-
     echo -n " Updading $COMPONENT Systemd file : "
     sed -i -e 's/DBHOST/mysql.roboshop.internal/' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
@@ -109,7 +107,7 @@ JAVA(){
     DOWNLOAD_AND_EXTRACT
 
     echo -n "Generating Artifacts: "
-    # cd $APPUSER_HOME
+    cd $APPUSER_HOME
     mvn clean package &>> $LOGFILE 
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 
