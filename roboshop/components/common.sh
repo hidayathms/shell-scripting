@@ -112,4 +112,5 @@ JAVA(){
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 
     CONFIG_SVC
+    START_SVC
 }
