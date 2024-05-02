@@ -4,10 +4,10 @@ COMPONENT=rabbitmq
 
 source components/common.sh
 
-echo -e " \e[34m********Configuring $COMPONENT  dependencies ******\e[0m"
+echo -e " \e[34m********Configuring $COMPONENT   ******\e[0m"
 
 
-echo -e " \e[34m********Configuring $COMPONENT  repo ******\e[0m"
+echo -n -e " \e[34m Configuring $COMPONENT  repo : \e[0m"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash  &>>LOGFILE
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash  &>>LOGFILE
 stat $?
