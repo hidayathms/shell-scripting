@@ -71,7 +71,7 @@ CONFIG_SVC(){
     stat $?
     
     echo -n " Generating Artifacts : "
-    cd $APPUSER_HOME
+    # cd $APPUSER_HOME
     npm install &>>$LOGFILE
     stat $?
 
