@@ -90,3 +90,18 @@ START_SVC(){
    
 stat $?
 }
+
+JAVA(){
+    echo -n " Installing maven :"
+    dnf install maven -y  &>> $LOGFILE 
+    stat $?
+
+    CREATE_USER
+
+    DOWNLOAD_AND_EXTRACT
+
+    echo -n "Generating Artifacts: "
+    cd $APPUSER_HOME
+    mvn clean package &>> $LOGFILE 
+    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+}
