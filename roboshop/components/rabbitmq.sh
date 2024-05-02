@@ -23,8 +23,10 @@ systemctl status rabbitmq-server -l &>>LOGFILE
 stat $?
 
 echo -n " Creating $APPUSER for $COMPONENT : "
+if [ $? -ne 0 ] ; then
 rabbitmqctl add_user roboshop roboshop123
 stat $?
+fi
 
 echo -n " Sorting permissions to $COMPONENT : "
 rabbitmqctl set_user_tags roboshop administrator
