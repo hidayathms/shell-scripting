@@ -17,9 +17,9 @@ dnf install rabbitmq-server -y &>>LOGFILE
 stat $?
 
 echo -n " Starting $COMPONENT  :"
-systemctl enable rabbitmq-server 
-systemctl start rabbitmq-server
-systemctl status rabbitmq-server -l
+systemctl enable rabbitmq-server &>>LOGFILE
+systemctl start rabbitmq-server &>>LOGFILE
+systemctl status rabbitmq-server -l &>>LOGFILE
 
 echo -n " Creating $APPUSER for $COMPONENT: "
 rabbitmqctl add_user roboshop roboshop123
