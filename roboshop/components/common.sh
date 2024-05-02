@@ -124,9 +124,9 @@ CREATE_USER
 
 DOWNLOAD_AND_EXTRACT
 
-echo -n " Generating Artifacts :"
+echo -n " Generating Artifacts :"  &>> $LOGFILE 
 cd /home/roboshop/payment 
-pip3.6 install -r requirements.txt
+pip3.6 install -r requirements.txt  &>> $LOGFILE 
 stat $?
 
 # echo -n " Udate user id and group id :"
