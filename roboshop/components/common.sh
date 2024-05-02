@@ -83,7 +83,7 @@ CONFIG_SVC(){
     stat $?
     
     echo -n " Updading $COMPONENT Systemd file : "
-    sed -i -e 's/DBHOST/mysql.roboshop.internal/' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/' -e 's/CARTHOST/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $?
  }
@@ -113,4 +113,26 @@ JAVA(){
 
     CONFIG_SVC
     START_SVC
+}
+
+PAYTHON(){
+echo -n " Installing PYTHON :"
+dnf install python36 gcc python3-devel -y  &>> $LOGFILE 
+stat $?
+
+CREATE_USER
+
+DOWNLOAD_AND_EXTRACT
+
+echo -n " Generating Artifacts :"
+cd /home/roboshop/payment 
+pip3.6 install -r requirements.txt
+stat $?
+
+# echo -n " Udate user id and group id :"
+
+CONFIG_SVC
+
+START_SVC
+
 }
