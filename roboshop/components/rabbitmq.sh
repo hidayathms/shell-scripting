@@ -22,8 +22,9 @@ systemctl start rabbitmq-server &>>LOGFILE
 systemctl status rabbitmq-server -l &>>LOGFILE
 stat $?
 
-echo -n " Creating $APPUSER for $COMPONENT : "
+
 if [ $? -ne 0 ] ; then
+echo -n " Creating $APPUSER for $COMPONENT : "
 rabbitmqctl add_user roboshop roboshop123
 stat $?
 fi
