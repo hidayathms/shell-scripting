@@ -109,7 +109,7 @@ JAVA(){
     DOWNLOAD_AND_EXTRACT
 
     echo -n "Generating Artifacts: "
-    cd $APPUSER_HOME
+    # cd $APPUSER_HOME
     mvn clean package &>> $LOGFILE 
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 
