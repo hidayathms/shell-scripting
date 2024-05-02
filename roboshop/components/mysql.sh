@@ -39,6 +39,13 @@ if [ $? -eq 0 ]; then
     stat $?
 fi
 
-echo -n "Download & Inject the schema : "
-curl -s -L -o /tmp/mysql.zip $MYSQL_SCHEMA
+echo -n "Downloading  the $COMPONENT schema : "
+curl -s -L -o /tmp/${COMPONENT}.zip $MYSQL_SCHEMA
 
+echo -n "Extracting and Injecting the schema : "
+cd /tmp
+unzip -o ${COMPONENT}.zip   &>> $LOGFILE
+cd ${COMPONENT}-main
+mysql -u root -pRoboShop@1 <shipping.sql    &>> $LOGFILE
+
+echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
