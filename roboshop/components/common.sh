@@ -77,7 +77,7 @@ CONFIG_SVC(){
 
 
     echo -n " Updading $COMPONENT Systemd file : "
-    sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    sed -i -e 's/DBHOST/mysql.roboshop.internal/' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $?
  }
@@ -104,6 +104,6 @@ JAVA(){
     cd $APPUSER_HOME
     mvn clean package &>> $LOGFILE 
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
-    
+
     CONFIG_SVC
 }
