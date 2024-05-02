@@ -43,6 +43,17 @@ NODEJS(){
 
     CREATE_USER
 
+    DOWNLOAD_AND_EXTRACT
+
+    CONFIG_SVC
+
+    echo -n " Generating Artifacts : "
+    cd $APPUSER_HOME
+    npm install &>>$LOGFILE
+    stat $?
+
+    START_SVC
+
 }
 
 DOWNLOAD_AND_EXTRACT(){
@@ -70,10 +81,7 @@ CONFIG_SVC(){
     chmod -R 777 $APPUSER_HOME
     stat $?
     
-    # echo -n " Generating Artifacts : "
-    # cd $APPUSER_HOME
-    # npm install &>>$LOGFILE
-    # stat $?
+    
 
 
     echo -n " Updading $COMPONENT Systemd file : "
