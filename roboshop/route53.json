@@ -1,18 +1,11 @@
 {
-    "Comment": "Creates a DNS record",
-    "Changes": [
-        {
-            "Action": "UPSERT",
-            "ResourceRecordSet": {
-                "Name": "COMPONENT.roboshop.internal",
-                "Type": "A",
-                "TTL": 10,
-                "ResourceRecords": [
-                    {
-                        "Value": "IPADDRESS"
-                    }
-                ]
-            }
-        }
-    ]
+    "Comment": "Creates DNS record ",
+    "Changes": [{
+    "Action": "UPSERT",
+                "ResourceRecordSet": {
+                            "Name": "COMPONENT.roboshop.internal",
+                            "Type": "CNAME",
+                            "TTL": 10,
+                         "ResourceRecords": [{ "Value": "IPADDRESS"}]
+}}]
 }
