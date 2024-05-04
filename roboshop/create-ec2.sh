@@ -13,6 +13,6 @@ SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-al
 INSTANCE_TYPE="t3.micro"
 
 
-echo -e " ****Creating Server in Progress *****!!!!"
+echo -n -e " ****Creating Server in Progress *****!!!!"
 aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" &> $LOGFILE
 stat $?
