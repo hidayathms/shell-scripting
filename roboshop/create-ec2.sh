@@ -16,10 +16,10 @@ INSTANCE_TYPE="t3.micro"
 
 echo -n -e " ****$COMPONENT Server in Progress *****!!!!"
 # aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" &> $LOGFILE
-PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq ".Instance[].PrivateIpAddress" | sed -e 's/"//g') &>$LOGFILE
+PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq ".Instance[].PrivateIpAddress" | sed -e 's/"//g' ) &>$LOGFILE
 stat $?
 
 echo -n -e " ****$COMPONENT DNS Record creation in Progress *****!!!! :"
-sed -e "s/COMPONENT/${COMPONENT}/" -e "/s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json
 
