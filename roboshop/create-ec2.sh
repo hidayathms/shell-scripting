@@ -21,5 +21,5 @@ stat $?
 
 echo -n -e " ****$COMPONENT DNS Record creation in Progress *****!!!! :"
 sed -e "s/COMPONENT/${COMPONENT}/" -e "/s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
-aws route53 change-resource-record-sets --hosted-zone-id ${HOSTEDZONEID} --change-batch file:///tmp/dns.json
+aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json
 
