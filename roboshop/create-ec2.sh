@@ -6,10 +6,10 @@
 # AMI_ID="ami-072983368f2a6eab5" Not the correct approach
 # SecurityGroup_ID="sg-014143c52beef6877"
 
-if [ -z $1 ] ; then
-echo -e " Compnent name is needed "
-exit 1
-fi
+# if [ -z $1 ] ; then
+# echo -e " Compnent name is needed "
+# exit 1
+# fi
 
 COMPONENT=$1
 HOSTEDZONEID="Z01822012WSURFZZ552LY"
