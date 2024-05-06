@@ -6,7 +6,7 @@
 # AMI_ID="ami-072983368f2a6eab5" Not the correct approach
 # SecurityGroup_ID="sg-014143c52beef6877"
 
-if [ -z $1 ] || [ -Z $2 ]; then
+if [ -z $1 ] || [ -z $2 ]; then
 echo -e " Compnent name is needed "
 exit 1
 fi
