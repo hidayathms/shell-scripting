@@ -7,7 +7,7 @@
 # SecurityGroup_ID="sg-014143c52beef6877"
 
 if [ -z $1 ] || [ -z $2 ]; then
-echo -e " Compnent name is needed "
+echo -e " Compnent name & env is needed "
 echo -e " Exaple Usage :  bash create-ec2 ratting dev"
 exit 1
 fi
