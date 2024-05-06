@@ -8,6 +8,7 @@
 
 if [ -z $1 ] || [ -z $2 ]; then
 echo -e " Compnent name is needed "
+echo -e " Exaple Usage :  bash create-ec2 ratting dev"
 exit 1
 fi
 
