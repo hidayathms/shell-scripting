@@ -28,9 +28,11 @@ sed -e "s/COMPONENT/${COMPONENT}-${ENV}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route5
 
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json
 
+echo -e "****$COMPONENT-$ENV Server creation completed *****!!!!"
+
 }
 
-echo -e "****$COMPONENT-$ENV Server creation completed *****!!!!"
+
 
 if [ "$1" == "all" ]; then
     for component in frontend mongodb catalogue redis user cart mysql shipping reabbitmq payment; do
