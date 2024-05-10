@@ -53,3 +53,5 @@ mysql -uroot -pRoboshop@1 <shipping.sql &>> $LOGFILE
 stat $?
 
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
+
+set-hostname $COMPONENT

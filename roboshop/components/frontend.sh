@@ -56,3 +56,5 @@ systemctl restart nginx &>> $LOGFILE
 stat $?
 
 echo -e " \e[34m********$COMPONENT Component configuration completed ******\e[0m"
+
+set-hostname $COMPONENT

@@ -25,3 +25,5 @@ echo -n " Starting $COMPONENT  :"
 systemctl daemon-reload &>> $LOGFILE 
 systemctl restart redis &>> $LOGFILE 
 stat $?
+
+set-hostname $COMPONENT
